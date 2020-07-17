@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', Microsoft YaHei, sans-serif;
+            /* border: 0.1px solid black; */
+        }
+
+        /*** Global HTML ELEMENT ***/
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        /*** layout ***/
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+
+        /*** Utilities ***/
+        .clearfix {
+            clear: both;
+        }
+
+        .list-unstyled {
+            list-style: none;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .flex-direction-column {
+            flex-direction: column;
+        }
+
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .flex-grow {
+            flex-grow: 2;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .algin-self-center {
+            align-self: center;
+        }
+
+        .cover-fit {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .contain-fit {
+                object-fit: contain;
+            }
+
+        }
+
+
+        /*** Section-Nav ***/
+        .container>.logo {
+            width: 210px;
+            height: 70px;
+            margin: 0;
+            padding: 8px 0 10px 22px;
+            overflow: hidden;
+
+        }
+
+
+        .container>.nav {
+            flex-grow: 2;
+            height: 70px;
+        }
+
+        .nav>ul {
+            padding: 0 0 0 25px
+        }
+
+        .nav>ul>li>a {
+            padding: 15px;
+            color: #908D8D;
+            font-size: 18px;
+        }
+
+        .nav>ul>li>a:hover {
+            border-bottom: 3px solid #4F3A3E;
+        }
+
+        .container>.setting {
+            width: 70px;
+            height: 70px;
+            margin: 0;
+            padding: 0 0 5px 0;
+            overflow: hidden;
+        }
+
+        .nav-menu {
+            display: none;
+            color: #9A9A9A;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav>ul {
+                display: none;
+            }
+
+            .container>.setting {
+                display: none;
+            }
+
+            .nav-menu {
+                margin: 20px 2.2vw 0 0;
+                display: block;
+            }
+        }
+
+        .nav-show-menu .nav>ul {
+            display: block;
+            position: absolute;
+            top: 54px;
+            left: 2vw;
+            z-index: 5;
+            background: #fff;
+            width: 96%;
+            box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-show-menu .nav>.nav-ul2 {
+            top: 230px;
+            box-shadow: 0px 0px 0px 0px;
+        }
+
+        .nav-show-menu .nav>ul>li {
+            display: block;
+            text-align: center;
+            height: 40px;
+            margin-top: 20px;
+            margin-right: 0;
+            font-size: 18px;
+        }
+
+
+
+        /*** Section-Header-flex system ***/
+
+        .header {
+            color: #fff;
+            text-align: center;
+        }
+
+        /** Header-Up **/
+        .header-up {
+            background: url(images/long-hair.jpg), rgb(92, 88, 88);
+            background-blend-mode: multiply;
+            background-size: cover;
+            height: 400px;
+            overflow: hidden;
+        }
+
+
+        .header-up>figure {
+            width: 116px;
+            height: 136px;
+            overflow: hidden;
+            margin: 55px auto 0;
+        }
+
+        .header-up>figure>img {
+            filter: brightness(150%);
+        }
+
+
+
+        .header-up>h1 {
+            margin: 10px;
+            font-size: 41px;
+            font-weight: 510;
+            margin: 5px auto 0;
+        }
+
+        .header-up>P {
+            font-weight: 300;
+            font-size: 18px;
+            color: #F0F0F0;
+            margin: 10px auto 0;
+        }
+
+        .header-up .searchbox {
+            width: 450px;
+            height: 45px;
+            margin: 0 auto;
+            border: 2px solid #DA92A5;
+            font-size: 16px;
+            font-weight: 100;
+            padding: 5px 5px 5px 18px;
+            margin: 37px auto;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .header-up .searchbox {
+                width: 90%;
+                position: relative;
+            }
+
+            .header-up>form>i {
+                color: #8C8C8C;
+            }
+        }
+
+
+        .searchbox select {
+            background: transparent;
+            color: #a6a5a6;
+            margin-right: 14px;
+            letter-spacing: 1px;
+            border: 0px;
+        }
+
+        .searchbox select option {
+            color: black;
+        }
+
+        .searchbox input {
+            background-color: transparent;
+            border: 0px;
+            border-left: 2px solid #ab5063;
+            padding-left: 18px;
+            height: 32px;
+        }
+
+        .searchbox .fa {
+            font-size: 18px;
+        }
+
+        .searchbox ::placeholder {
+            color: #a6a5a6;
+            letter-spacing: 1px;
+        }
+
+
+        .searchbox button {
+            background-color: #ab5063;
+            color: #fff;
+            padding: 5px;
+            letter-spacing: 1px;
+            border: 0px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .searchbox button {
+                width: 100%;
+                position: absolute;
+                bottom: -90%;
+                left: 0;
+                opacity: 0.8;
+            }
+        }
+
+
+        .header-down {
+            background: url(icon/bg_icon.png);
+            min-height: 188px;
+            text-align: center;
+        }
+
+        /** Header-Down **/
+        .header-down-content {
+            margin: 0 auto;
+            width: 577px;
+            font-size: 18px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .header-down-content {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .header-down-content li {
+                width: 100%;
+            }
+
+            .header-down>ul>li:nth-child(3) {
+                margin-bottom: 35px;
+            }
+        }
+
+
+        .header-down-content li figure {
+            padding: 0px;
+            margin: 20px auto 0px;
+        }
+
+        .header-down-content li p {
+            margin: 0 0 5px;
+            letter-spacing: 1px;
+        }
+
+
+        /*** Section-Article-computer-float system/mobile-flex-system  ***/
+        article.container {
+            padding: 0 95px 0 84px;
+        }
+
+        article>section {
+            position: relative;
+        }
+
+        @media only screen and (max-width: 576px) {
+            article>section.article-trend-topic {
+                margin-bottom: 61px;
+            }
+        }
+
+
+        .article-btn {
+            display: inline-block;
+            background: #C1576E;
+            border: 1px solid #BA435C;
+            padding: 5px 10px;
+            margin-top: 8px;
+            transition: .5s;
+            color: #fff;
+            position: absolute;
+            right: 0;
+            bottom: -40px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            article.container {
+                padding: 0;
+            }
+
+            .article-btn {
+                right: 17px
+            }
+
+        }
+
+        article.container h2 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 400;
+            padding-right: 20px;
+            margin: 46px auto 34px;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 576px) {
+            article.container h2 {
+                width: 100%;
+                font-size: 5.88vw;
+                font-weight: 100;
+                padding-left: 10px;
+            }
+        }
+
+        article.container h2::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #130704;
+            position: absolute;
+            bottom: -7px;
+            left: 49%;
+            transform: translateX(-49%);
+        }
+
+        /* for populartopic-article & trend-article */
+        .article-card {
+            position: relative;
+        }
+
+        /** Popular-Hair **/
+        .hair-article,
+        .barber-article {
+            display: none;
+        }
+
+        @media only screen and (max-width: 576px) {
+
+            .hair-article,
+            .barber-article {
+                display: block;
+                padding: 0 5px;
+            }
+
+            .col-sm-6 {
+                flex: 0 0 calc((100% - 4 * 17px) / 2);
+                width: 100%;
+                max-width: calc((100% - 4 * 17px) / 2);
+                margin: 12px 17px 0;
+                position: relative;
+            }
+        }
+
+        /* Popular-Barber */
+        @media only screen and (max-width: 576px) {
+            .barber-article>section>h2 {
+                margin-top: 82px;
+            }
+
+
+            .barber-article>section>.col-sm-6>figure {
+                width: 40vw;
+                height: 40vw;
+                overflow: hidden;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
+            .barber-article>section>.col-sm-6>p {
+                text-align: center;
+                margin: 12px 0;
+            }
+        }
+
+
+        /* Popular-Topic */
+
+        @media only screen and (max-width: 576px) {
+            .article-popular-topic {
+                display: none;
+            }
+        }
+
+        .article-popular-topic>.article-card {
+            width: calc((100% - 3 * 38px) / 4);
+            height: 250px;
+            float: left;
+            margin: 0 38px 0 0;
+        }
+
+        .article-popular-topic>.article-card:last-of-type {
+            margin-right: 0;
+        }
+
+        .article-popular-topic .article-card figcaption,
+        .article-popular-hair .col-sm-6 figcaption {
+            background: #F8F7F5;
+            width: 108px;
+            height: 28px;
+            opacity: 0.8;
+            border: 2px solid #ab5063;
+            position: absolute;
+            top: 88%;
+            left: 73%;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            line-height: 28px;
+            text-align: center;
+            color: #C67D8B;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .article-popular-topic>.article-card:nth-of-type(3)>img {
+            object-position: 55%;
+        }
+
+
+        /* Trend-Topic */
+
+        .article-trend-topic>.article-card {
+            width: calc((100% - 2 * 18px) / 3);
+            height: 172px;
+            float: left;
+            position: relative;
+            margin: 0 18px 0 0;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .article-trend-topic>.article-card {
+                width: 91%;
+                margin: 0 17px 10px;
+            }
+
+            .trend-article>.article-trend-topic>h2 {
+                margin-top: 80px;
+            }
+        }
+
+        .article-trend-topic>.article-card:last-of-type {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        .article-trend-topic .article-card figcaption,
+        .article-popular-barber .col-sm-6 figcaption {
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 20px;
+            color: #ECE8E2;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-align: center;
+            text-shadow: 1px 1px #333;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0px 10px;
+        }
+
+        .article-trend-topic>.article-card:nth-of-type(3)>img {
+            object-position: 55%;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .trend-article>.article-trend-topic>a {
+                right: 4.59vw;
+            }
+
+            .article-trend-topic>.article-card>img {
+                filter: brightness(63%) contrast(126%);
+            }
+
+            .article-popular-barber .col-sm-6 figcaption {
+                top: 62%;
+            }
+        }
+
+        /*** Section-Footer-flex system ***/
+        footer.container {
+            background: #DBDBDB;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        /* footer-up */
+        .footer-up {
+            height: 180px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-up {
+                height: 241px;
+                padding: 0 6vw 0 5vw;
+            }
+        }
+
+        .footer-up figure {
+            height: 170px;
+            width: 118px;
+            margin-right: 12px;
+            margin-left: -52px;
+            padding: 0;
+        }
+
+        .footer-up figure img {
+            object-position: 30%;
+            margin: -1px 0 0 0;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-up figure {
+                width: 50vw;
+                height: 227px;
+                margin: auto 2vw 0 0;
+            }
+
+            .footer-up figure img {
+                object-position: 24% 10%;
+            }
+        }
+
+        .footer-up h2 {
+            text-align: left;
+            font-size: 26px;
+            font-weight: 400;
+            padding-right: 20px;
+            margin: 34px auto 36px;
+            position: relative;
+        }
+
+        .footer-up h2::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #130704;
+            position: absolute;
+            bottom: -7px;
+            left: 33%;
+            transform: translateX(-50%);
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-up h2 {
+                font-size: 5.88vw;
+                font-weight: 100;
+            }
+        }
+
+        .footer-up p {
+            margin: 0;
+            color: #C4667B;
+            font-size: 14px;
+            text-shadow: 0px 1px #fff;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-up>.footer-up-right>p {
+                display: none;
+            }
+
+            .footer-up>.footer-up-right>img {
+                display: inline-block;
+                margin-left: 6.2vw;
+                width: 30.2vw;
+            }
+        }
+
+        /* footer-mid */
+        .footer-mid {
+            min-height: 201px;
+            position: relative;
+            top: 0;
+            left: 0;
+            color: #fff;
+            overflow: hidden;
+        }
+
+
+        .footer-mid img {
+            display: block;
+            /* Responsive */
+            height: 201px;
+            width: 960px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid {
+                min-height: 53.2vh;
+            }
+
+            .footer-mid img {
+                height: 53.2vh;
+            }
+        }
+
+        .footer-mid .foreground {
+            position: absolute;
+            /* Overlap the previous div */
+            top: -0.5%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35);
+            /* transparent background */
+        }
+
+        .footer-mid .blur {
+            -webkit-filter: blur(3px);
+            filter: blur(3px);
+        }
+
+        /* footer-mid-up */
+        @media only screen and (max-width: 576px) {
+            .footer-mid .foreground ul {
+                width: 100%;
+            }
+        }
+
+        .footer-mid-up {
+            min-height: 148px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid-up {
+                height: 39.1vh;
+            }
+        }
+
+
+        .footer-mid .foreground ul {
+            margin: 18px 0 10px;
+            padding: 0 70px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid .foreground ul {
+                width: 100%;
+            }
+
+            .footer-mid>div>.footer-mid-up>ul.footer-mid-up-left {
+                margin-top: 3.5vh;
+            }
+
+            .footer-mid>div>.footer-mid-up>ul.footer-mid-up-right {
+                margin-top: 0vh;
+
+            }
+
+
+        }
+
+        .footer-mid .foreground .footer-mid-up-left {
+            position: relative;
+        }
+
+        .footer-mid .foreground .footer-mid-up-left::before {
+            content: "";
+            display: block;
+            width: 88px;
+            position: absolute;
+            bottom: 50%;
+            right: -26%;
+            transform: rotate(90deg);
+            border: 1px dashed #fff;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid .foreground .footer-mid-up-left::before {
+                display: none;
+            }
+        }
+
+
+        .footer-mid .foreground ul li {
+            text-align: center;
+            font-size: 13px;
+            color: #ECE8E2;
+            text-shadow: 1px 1px #333;
+        }
+
+
+        .footer-mid .foreground .bigtext {
+            font-size: 50px;
+            margin: 0px auto 10px;
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid .foreground ul li {
+                font-size: 3.19vw;
+            }
+
+            .footer-mid .foreground .bigtext {
+                font-size: 8vw;
+                font-weight: 700;
+                margin: 2.8vh 0;
+            }
+        }
+
+        /* footer-mid-down */
+        .footer-mid-down {
+            min-height: 51px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid-down {
+                height: 14.1vh;
+            }
+        }
+
+
+        .footer-mid-down h2 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 400;
+            padding-right: 20px;
+            margin: 0 0 24px 15px;
+            position: relative;
+        }
+
+        .footer-mid-down h2::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            bottom: -14px;
+            left: 46%;
+            transform: translateX(-50%);
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid-down h2 {
+                width: 100%;
+                font-size: 6.18vw;
+                height: 3.83vh;
+                line-height: 3.83vh;
+            }
+
+            .footer-mid-down h2::before {
+                bottom: -1.2vh;
+                left: 46%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* footer-mid-down-btn */
+        .footer-mid-down a {
+            display: inline-block;
+            width: 130px;
+            height: 38px;
+            background: #A29E9C;
+            opacity: 0.7;
+            color: black;
+            font-size: 13px;
+            line-height: 38px;
+            text-align: center;
+            border-radius: 3px;
+            margin-right: 9px;
+        }
+
+        .footer-mid-down a:hover {
+            background: rgb(228, 222, 219);
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-mid-down a {
+                margin-bottom: 3.42vh;
+                width: 42.91vw;
+            }
+        }
+
+        /* footer-down */
+        .footer-down {
+            min-height: 162px;
+            font-size: 12px;
+            color: grey;
+            padding-top: 24px;
+            text-shadow: 0 0.1px #000;
+            letter-spacing: 1.5px;
+
+        }
+
+
+        /* footer-down-up-left */
+        .footer-down-up-left {
+            width: 368px;
+            margin: 0 22px 0 67px;
+        }
+
+
+
+        .footer-down-up-left figure {
+            width: 24px;
+            height: 28px;
+            padding: 0;
+            margin: 0 12px 0 0;
+        }
+
+        .footer-down-up-left figure img {
+            width: 24px;
+            height: 28px;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .footer-down-up-left>p {
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-down-up-left {
+                width: 100%;
+            }
+
+            .footer-down-up-left figure {
+                margin-left: -50px;
+            }
+
+            .footer-down-up-left>p {
+                line-height: 2.5vh;
+            }
+        }
+
+        /* footer-down-up-mid  */
+
+        .footer-down-up-mid>ul {
+            margin: 0 30px 0 0;
+            padding: 0;
+            width: 168px;
+        }
+
+
+        .footer-down-up-mid>ul>li {
+            margin: 0 20px 10px 0;
+        }
+
+        .footer-down-up-mid>ul>li:nth-of-type(4) {
+            margin-right: 0;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-down-up-mid {
+                width: 100%;
+            }
+
+            .footer-down-up-mid>ul {
+                width: 100%;
+            }
+
+            .footer-down-up-mid>ul>li {
+                margin: 20px 33.93vw 0 5.39vw;
+                font-size: 2.78vw;
+            }
+
+            .footer-down-up-mid>ul>li:nth-of-type(2),
+            .footer-down-up-mid>ul>li:nth-of-type(4) {
+                margin-right: 0;
+            }
+
+        }
+
+
+        .footer-down-up-mid>ul>li>figure {
+            width: 15px;
+            height: 15px;
+            margin: -1px 5px 0 0;
+
+        }
+
+
+        .footer-down-up-mid img {
+            filter: brightness(55%);
+        }
+
+        .footer-down-up-mid>ul>li>p {
+            margin: 0;
+        }
+
+
+
+        /* footer-down-up-right  */
+        .footer-down-up-right {
+            display: block;
+            width: 118px;
+            height: 36px;
+            color: #c1576e;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 3px;
+            margin-right: 9px;
+            border: 1px solid #c1576e;
+            text-shadow: 0 0;
+        }
+
+        .footer-down-up-right:hover {
+            color: #fff;
+            background-color: #CF5973;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-down-up-right {
+                width: 85.14%;
+                margin-top: 34px;
+            }
+        }
+
+        /* footer-down-end */
+        .footer-down-end {
+            width: 100%;
+            border-top: 1px solid #BAB8B8;
+            text-align: center;
+            margin: 0 auto;
+            /* background: blue; */
+            color: #B1AFAF;
+            text-shadow: 0 1px #555;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .footer-down-end p {
+                margin: 2.73vh auto 2.12vh;
+                width: 56%;
+                line-height: 2.83vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SECTION Nav-->
+    <section class="container d-flex">
+        <figure class="logo">
+            <img class="cover-fit contain-fit" src="icon/logo.png" alt="">
+        </figure>
+        <nav class="nav d-flex  justify-content-between  align-items-center">
+            <ul class="list-unstyled d-flex">
+                <li><a href="">找髮型</a></li>
+                <li><a href="">找設計師</a></li>
+                <li><a href="">美髮誌</a></li>
+            </ul>
+            <ul class="list-unstyled d-flex nav-ul2">
+                <li><a href="">註冊</a> </li>
+                <li><a href="">登入</a> </li>
+            </ul>
+        </nav>
+        <figure class="setting">
+            <img class="cover-fit" src="icon/setting.png" alt="">
+        </figure>
+        <div class="nav-menu">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- SECTION Header -->
+    <header class="header container">
+        <!-- Header-Up -->
+        <div class="header-up">
+            <figure>
+                <img class="cover-fit" src="images/logo_icon_g.svg" alt="">
+            </figure>
+            <h1>煩惱髮型嗎</h1>
+            <p>給你最多髮型靈感及在地優秀設計師</p>
+
+            <form class="searchbox d-flex align-items-center" action="/action_page.php">
+                <i class="fa fa-map-marker-alt fa-2x" aria-hidden="true"></i>
+                <select name="Place">
+                    <option value="找地區">找地區</option>
+                    <option value="TPE">台北市</option>
+                    <option value="TPH">新北市</option>
+                    <option value="HSC">新竹市</option>
+                </select>
+                <input class="flex-grow" type="text" placeholder="搜尋髮型主題" name="search">
+                <button type="submit"><i class="fa fa-search fa-2x"></i>去逛逛</button>
+            </form>
+        </div>
+        <!-- Header-Down-->
+        <div class="header-down">
+            <ul class="header-down-content d-flex  justify-content-between list-unstyled">
+                <li>
+                    <figure><img src="icon/icon_search.png" alt=""></figure>
+                    <p>在地設計師作品</p>
+                    <p>輕鬆找</p>
+                </li>
+                <li>
+                    <figure><img src="icon/icon_fashion.png" alt=""></figure>
+                    <p>流行髮型</p>
+                    <p>一手掌握</p>
+                </li>
+                <li>
+                    <figure><img src="icon/icon_book.png" alt=""></figure>
+                    <p>即時溝通預約</p>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- SECTION Article -->
+    <!-- Article-Popular Hair Style -->
+    <article class="container hair-article">
+        <section class="article-popular-hair  d-flex flex-wrap justify-content-center">
+            <h2>熱門髮型</h2>
+            <figure class="col-sm-6">
+                <img class="cover-fit" src="images/hot-hair-1.png" alt="">
+                <figcaption article-card-text>玫瑰砂晶色系</figcaption>
+            </figure>
+            <figure class="col-sm-6">
+                <img class="cover-fit" src="images/hot-hair-2.png" alt="">
+                <figcaption article-card-text>嬉皮捲</figcaption>
+            </figure>
+            <figure class="col-sm-6">
+                <img class="cover-fit" src="images/hot-hair-3.png" alt="">
+                <figcaption article-card-text>棕色系</figcaption>
+            </figure>
+            <figure class="col-sm-6">
+                <img class="cover-fit" src="images/hot-hair-4.png" alt="">
+                <figcaption article-card-text>女生長髮</figcaption>
+            </figure>
+            <a href="#" class="article-btn clearfix">more</a>
+            <div class="clearfix"></div>
+        </section>
+    </article>
+
+    <!-- Article-Popular Barber -->
+    <article class="container barber-article">
+        <section class="article-popular-barber d-flex flex-wrap justify-content-center">
+            <h2>人氣設計師</h2>
+            <div class="col-sm-6">
+                <figure>
+                    <img class="cover-fit" src="images/barber1.jpg" alt="">
+                    <figcaption article-card-text>Angus怡</figcaption>
+                </figure>
+                <p>40則貼文</p>
+                <p>65人追蹤</p>
+            </div>
+            <div class="col-sm-6">
+                <figure>
+                    <img class="cover-fit" src="images/barber2.jpg" alt="">
+                    <figcaption article-card-text>Ian Chao</figcaption>
+                </figure>
+                <p>88則貼文</p>
+                <p>172人追蹤</p>
+            </div>
+            <div class="col-sm-6">
+                <figure>
+                    <img class="cover-fit" src="images/barber3.jpg" alt="">
+                    <figcaption article-card-text>阿毛</figcaption>
+                </figure>
+                <p>33則貼文</p>
+                <p>87人追蹤</p>
+            </div>
+            <div class="col-sm-6">
+                <figure>
+                    <img class="cover-fit" src="images/barber4.jpg" alt="">
+                    <figcaption article-card-text>Ethan Chang</figcaption>
+                </figure>
+                <p>81則貼文</p>
+                <p>57人追蹤</p>
+            </div>
+            <a href="#" class="article-btn clearfix">more</a>
+            <div class="clearfix"></div>
+        </section>
+    </article>
+
+    <!-- Article-Popular Topic -->
+    <article class="container populartopic-article">
+        <section class="article-popular-topic">
+            <h2>熱門主題</h2>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/14366_18.jpg" alt="">
+                <figcaption article-card-text>油頭</figcaption>
+            </figure>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/11155.jpg" alt="">
+                <figcaption article-card-text>灰色系</figcaption>
+            </figure>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/138974.jpg" alt="">
+                <figcaption article-card-text>大捲</figcaption>
+            </figure>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/141965.jpg" alt="">
+                <figcaption article-card-text>男孩髮型</figcaption>
+            </figure>
+            <a href="#" class="article-btn clearfix">more</a>
+            <div class="clearfix"></div>
+        </section>
+    </article>
+
+    <!-- Article-Trend Topic -->
+    <article class="container trend-article">
+        <section class="article-trend-topic">
+            <h2>趨勢話題</h2>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/9743_2.jpg" alt="">
+                <figcaption article-card-text>鬆感的瀏海!配上極捲的捲度!反而更有型!</figcaption>
+            </figure>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/22736_8.jpg" alt="">
+                <figcaption article-card-text>日系鬆鬆捲度 吹乾即可霧面髮色</figcaption>
+            </figure>
+            <figure class="article-card">
+                <img class="cover-fit" src="images/3425_14.jpg" alt="">
+                <figcaption article-card-text>歐巴新寵，括號瀏海你跟風了嗎?</figcaption>
+            </figure>
+            <a href="#" class="article-btn clearfix">more</a>
+            <div class="clearfix"></div>
+        </section>
+    </article>
+
+    <!-- SECTION Footer -->
+    <footer class="container">
+        <!-- Footer-Up -->
+        <div class="footer-up d-flex justify-content-center">
+            <figure class="footer-up-left">
+                <img class="cover-fit" src="images/phones.png" alt="">
+            </figure>
+            <div class="footer-up-right">
+                <h2>快速找到好髮型</h2>
+                <img src="icon/btn_app_ios.png" alt="">
+                <img src="icon/btn_app_android.png" alt="">
+                <p>下載並註冊後就可以開始發表作品囉!</p>
+            </div>
+        </div>
+        <!-- Footer-Mid -->
+        <div class="footer-mid  d-flex flex-wrap">
+            <img class="blur" src="images/slide2.jpg" />
+            <div class="foreground ">
+                <!-- footer-mid-up -->
+                <div class="footer-mid-up  d-flex  justify-content-center d-flex flex-wrap">
+                    <ul class="footer-mid-up-left list-unstyled">
+                        <li>已有</li>
+                        <li class="bigtext">635</li>
+                        <li>位設計師</li>
+                    </ul>
+                    <ul class="footer-mid-up-right list-unstyled ">
+                        <li>發表</li>
+                        <li class="bigtext">6241</li>
+                        <li>張髮型作品</li>
+                    </ul>
+                </div>
+                <!-- footer-mid-down -->
+                <div class="footer-mid-down d-flex justify-content-center flex-wrap">
+                    <h2>優秀設計師募集中</h2>
+                    <a href="">了解更多</a>
+                    <a href="">立即免費註冊</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer-Down -->
+        <div class="footer-down">
+            <!-- footer-down-up -->
+            <div class="d-flex justify-content-center flex-wrap">
+                <!-- left -->
+                <div class="footer-down-up-left d-flex">
+                    <figure><img class="cover-fit" src="images/logo_icon_g.svg" alt="">
+                    </figure>
+                    <p>HairMap美髮地圖團隊致力於打造出最貼心實用的美髮資訊交流社群，讓美髮時光成為每個人生命中的美好時刻。</p>
+                </div>
+                <!-- mid -->
+                <div class="footer-down-up-mid">
+                    <ul class="list-unstyled d-flex  flex-wrap">
+                        <li class="d-flex">
+                            <figure><img class="cover-fit" src=" images/email.svg" alt=""></figure>
+                            <p>聯絡我們</p>
+                        </li>
+                        <li class="d-flex">
+                            <figure><img class="cover-fit" src=" images/ios.svg" alt=""></figure>
+                            <p>iOS</p>
+                        </li>
+                        <li class="d-flex">
+                            <figure><img class="cover-fit" src="images/facebook_g.svg" alt=""></figure>
+                            <p>粉絲專頁</p>
+                        </li>
+                        <li class="d-flex">
+                            <figure><img class="cover-fit" src=" images/android.svg" alt=""></figure>
+                            <p>Android</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- right -->
+                <a href="" class="footer-down-up-right"><i class="fas fa-users"></i>設計師加入</a>
+            </div>
+            <!-- footer-down-end" -->
+            <div class="footer-down-end">
+                <p>Hairdodo Inc.© 2016. All Rights Reserved 使用者條款與隱私權政策</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
