@@ -10,7 +10,7 @@
 
 - GitHub Pages
 
-  https://poseidoncode.github.io/salon/
+  https://poseidoncode.github.io/collection-salon/
 
 - 作品截圖
 
