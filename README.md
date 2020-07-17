@@ -6,7 +6,7 @@
 
 - 技術
 
-  HTML + CSS
+  HTML + CSS + jQuery
 
 - GitHub Pages
 
@@ -20,7 +20,7 @@
 
 備註:
 
-此為hairsolon切版練習，內容所用僅做為練習與作品集使用，若有侵權，再煩請寄信通知。
+此為hairsolon切版練習，內容所用僅做為練習與作品集使用，若圖片有侵權，再煩請寄信通知。
 
 信箱: posidomhu@gmail.com
 
