@@ -8,6 +8,9 @@
 
   HTML + CSS
 
+- GitHub Pages
+  https://poseidoncode.github.io/salon/
+
 - 作品截圖
 
   ![image](https://github.com/Poseidoncode/salon/blob/gh-pages/images/salon.PNG)
