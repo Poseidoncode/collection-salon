@@ -10,7 +10,7 @@
 
 - 作品截圖
 
-  ![salon](C:\Users\User\Pictures\小專\salon.PNG)
+  ![image](https://github.com/Poseidoncode/salon/blob/gh-pages/images/salon.PNG)
 
 
 
